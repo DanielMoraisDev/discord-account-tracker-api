@@ -13,7 +13,7 @@ const deleteConta = async (req, res) => {
 
        res.status(200).json({ message: "Conta deletada" })
     } catch (error) {
-        console.log('[CONTROLLER CONTA DELETE] Error: ' + error)
+        console.error('[CONTROLLER CONTA DELETE] Error: ' + error)
     }
 }
 

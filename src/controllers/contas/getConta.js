@@ -13,7 +13,7 @@ const getConta = async (req, res) => {
 
        res.status(200).json({ conta })
     } catch (error) {
-        console.log('[CONTROLLER CONTA GET ONE] Error: ' + error)
+        console.error('[CONTROLLER CONTA GET ONE] Error: ' + error)
     }
 }
 

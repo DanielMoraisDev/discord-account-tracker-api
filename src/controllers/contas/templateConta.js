@@ -71,9 +71,13 @@ const templateConta = async (req, res) => {
             console.log({ message: `Conta adicionada: ${e.nome_convite}` })
         })
 
-        return res.status(201).json({message: "Template de contas adicionado com sucesso" })
+        if (res) {
+            return res.json({message: "Template de contas adicionado com sucesso" })
+        }
+
+        return console.log({message: "Template de contas adicionado com sucesso" })
     } catch (error) {
-        console.log('[CONTAS TEMPLATE] Error: ' + error)
+        console.error('[CONTAS TEMPLATE] Error: ' + error)
     }
 }
 

@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import conn from "../config/conn.js";
 
-const TipoInsignia = conn.define("tipo_insignias", {
-    tipo_insignia_id: { 
+const ClassificacaoDecoracao = conn.define("classificacao_decoracoes", {
+    classificacao_decoracao_id: { 
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
@@ -22,4 +22,4 @@ const TipoInsignia = conn.define("tipo_insignias", {
     timestamps: false
 });
 
-export default TipoInsignia;
+export default ClassificacaoDecoracao;

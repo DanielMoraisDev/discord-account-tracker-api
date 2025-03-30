@@ -56,7 +56,7 @@ const createConta = async (req, res) => {
 
         return res.status(201).json({createConta, message: "Conta registrada com sucesso" })
     } catch (error) {
-        console.log('[CONTROLLER CONTA CREATE] Error: ' + error)
+        console.error('[CONTROLLER CONTA CREATE] Error: ' + error)
     }
 }
 

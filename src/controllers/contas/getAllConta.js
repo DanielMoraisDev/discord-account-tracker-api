@@ -6,7 +6,7 @@ const getAllConta = async (req, res) => {
         const contas = await ContaModel.findAll()
         res.status(200).json(contas)
     } catch (error) {
-        console.log('[CONTROLLER CONTA GET ALL] Error: ' + error)
+        console.error('[CONTROLLER CONTA GET ALL] Error: ' + error)
     }
 }
 

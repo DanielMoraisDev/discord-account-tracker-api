@@ -34,7 +34,7 @@ const updateConta = async (req, res) => {
 
         res.status(200).json({ message: "Conta atualizada" })
     } catch (error) {
-        console.log('[CONTROLLER CONTA UPDATE] Error: ' + error)
+        console.error('[CONTROLLER CONTA UPDATE] Error: ' + error)
     }
 }
 
