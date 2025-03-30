@@ -4,7 +4,7 @@ import conn from "../config/conn.js";
 import Contas from "./Contas.js";
 import Decoracoes from "./Decoracoes.js";
 
-const Conta_Decoracao = conn.define ("contas_decoracoes", {
+const ContaDecoracao = conn.define ("contas_decoracoes", {
     conta_decoracao_id: { 
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -35,15 +35,15 @@ const Conta_Decoracao = conn.define ("contas_decoracoes", {
 });
 
 Contas.belongsToMany(Decoracoes, {
-    through: Conta_Decoracao,
+    through: ContaDecoracao,
     foreignKey: "conta_id",
     otherKey: "decoracao_id"
 });
 
 Decoracoes.belongsToMany(Contas, {
-    through: Conta_Decoracao,
+    through: ContaDecoracao,
     foreignKey: "decoracao_id",
     otherKey: "conta_id"
 })
 
-export default Conta_Decoracao;
+export default ContaDecoracao;

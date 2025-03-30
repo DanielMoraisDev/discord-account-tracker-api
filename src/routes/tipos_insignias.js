@@ -7,4 +7,8 @@ tipoInsigniasRouter.post("/create", (req, res) => {
     return tipoInsigniasController.create(req, res);
 })
 
+tipoInsigniasRouter.post("/template", (req, res) => {
+    return tipoInsigniasController.template(req, res)
+})
+
 export default tipoInsigniasRouter;

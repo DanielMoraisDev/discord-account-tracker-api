@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import TipoInsigniaModel from "../../models/Tipos_Insignias.js";
+import TipoInsigniaModel from "../../models/TiposInsignias.js";
 
 const createTipoInsignia = async (req, res) => {
     try {

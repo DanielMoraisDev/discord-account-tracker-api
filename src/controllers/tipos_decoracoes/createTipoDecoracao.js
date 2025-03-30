@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import TipoDecoracaoModel from "../../models/Tipos_Decoracoes.js";
+import TipoDecoracaoModel from "../../models/TiposDecoracoes.js";
 
 const createTipoDecoracao = async (req, res) => {
     try {
