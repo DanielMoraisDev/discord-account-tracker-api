@@ -1,20 +1,20 @@
 import { Sequelize } from "sequelize";
 import ContaModel from "../../models/Contas.js";
 
-const getConta = async (req, res) => {
+const deleteConta = async (req, res) => {
     try {
        const { id } = req.params
 
-       const conta = await ContaModel.findOne({ where: { conta_id: id } })
+       const conta = await ContaModel.destroy({ where: { conta_id: id } })
 
        if (!conta) {
         return res.status(409).json({ error: "Não foi possivel encontrar a conta" })
        }
 
-       res.status(200).json({ conta })
+       res.status(200).json({ message: "Conta deletada" })
     } catch (error) {
-        console.log('[CONTROLLER CONTA GET ONE] Error: ' + error)
+        console.log('[CONTROLLER CONTA DELETE] Error: ' + error)
     }
 }
 
-export default getConta;
+export default deleteConta;

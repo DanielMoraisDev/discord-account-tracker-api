@@ -9,20 +9,18 @@ import ContaDecoracao from "./models/ContaDecoracoes.js";
 import ContaInsignia from "./models/ContaInsignias.js";
 import TipoDecoracao from "./models/TiposDecoracoes.js";
 import TipoInsignia from "./models/TiposInsignias.js";
-import InsigniaTiposInsignia from "./models/InsigniasTiposInsignias.js";
 
 const app = express();
 
 const syncDB = async () => {
     try {
         await Conta.sync();
-        await Decoracao.sync();
+        await TipoInsignia.sync();
+        await TipoDecoracao.sync();
         await Insignia.sync();
+        await Decoracao.sync();
         await ContaDecoracao.sync();
         await ContaInsignia.sync();
-        await TipoDecoracao.sync();
-        await TipoInsignia.sync();
-        await InsigniaTiposInsignia.sync();
 
         console.log("[DB] Tabelas sincronizadas com sucesso!");
     } catch (error) {
