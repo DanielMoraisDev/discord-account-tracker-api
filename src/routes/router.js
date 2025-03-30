@@ -17,4 +17,10 @@ router.use('/decoracoes/', decoracoesRouter);
 import insigniasRouter from "./insignias.js";
 router.use('/insignias/', insigniasRouter);
 
+import contasDecoracoesRouter from "./contas_decoracoes.js";
+router.use('/contas-decoracoes/', contasDecoracoesRouter);
+
+import contasInsigniasRouter from "./contas_insignias.js";
+router.use('/contas-insignias/', contasInsigniasRouter);
+
 export default router;

@@ -13,6 +13,8 @@ import classificacaoDecoracoesController from "./controllers/classificacao_decor
 import contasController from "./controllers/contas/contasController.js";
 import decoracoesController from "./controllers/decoracoes/decoracoesController.js";
 import insiginiasController from "./controllers/insignias/insigniasController.js";
+import contaDecoracoesController from "./controllers/contas_decoracoes/contasDecoracoesController.js";
+import contaInsigniasController from "./controllers/contas_insignias/contasInsigniasController.js";
 
 const app = express();
 
@@ -45,6 +47,8 @@ const templateData = async () => {
     await contasController.template();
     await decoracoesController.template();
     await insiginiasController.template();
+    await contaDecoracoesController.template();
+    await contaInsigniasController.template();
 }
 
 app.use(cors());

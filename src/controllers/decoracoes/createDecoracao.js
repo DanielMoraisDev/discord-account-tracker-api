@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import Decoracao from "../../models/Decoracoes.js";
+import DecoracaoModel from "../../models/Decoracoes.js";
 
 const createDecoracao = async (req, res) => {
     try {
@@ -23,13 +23,13 @@ const createDecoracao = async (req, res) => {
             tipo_decoracao_id: tipo_decoracao_id
         }
 
-        const decoracaoExist = await Decoracao.findOne({ where: { nome: decoracao.nome }});
+        const decoracaoExist = await DecoracaoModel.findOne({ where: { nome: decoracao.nome }});
 
         if (decoracaoExist) {
             return res.status(409).json({ error: "Essa decoracao já foi registrada!" })
         }
 
-        const createDecoracao = await Decoracao.create(decoracao)
+        const createDecoracao = await DecoracaoModel.create(decoracao)
 
         if (!createDecoracao) {
             return res.status(500).json({ error: "Essa decoração já foi registrada!" })

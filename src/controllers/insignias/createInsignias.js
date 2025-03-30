@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import Insignia from "../../models/Decoracoes.js";
+import InsigniaModel from "../../models/Decoracoes.js";
 
 const createInsignia = async (req, res) => {
     try {
@@ -23,13 +23,13 @@ const createInsignia = async (req, res) => {
             tipo_insignia_id: tipo_insignia_id
         }
 
-        const InsigniaExist = await Insignia.findOne({ where: { nome: insignia.nome }});
+        const InsigniaExist = await InsigniaModel.findOne({ where: { nome: insignia.nome }});
 
         if (InsigniaExist) {
             return res.status(409).json({ error: "Essa insignia já foi registrada!" })
         }
 
-        const createInsignia = await Insignia.create(Insignia)
+        const createInsignia = await InsigniaModel.create(Insignia)
 
         if (!createInsignia) {
             return res.status(500).json({ error: "Essa insignia já foi registrada!" })
